@@ -1,0 +1,43 @@
+<div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+    <button class="navbar-toggler btn-close" type="button" (click)="closeMenu(isShow)"></button>
+</div>
+<div class="offcanvas-body">
+    <ul class="navbar-nav justify-content-center flex-grow-1">
+        <ng-container *ngTemplateOutlet="recursiveMenu; context: { $implicit: navItemsList }"></ng-container>
+        <ng-template #recursiveMenu let-navItemsList>
+            @for (item of navItemsList; track item) {
+            <li class="nav-item" [ngClass]=" {'mega-menu dropdown' : item.title === 'Home' }" [class.dropdown]="item.title === 'Pages'">
+                @if(item.children){
+                <a class="nav-link dropdown-toggle" role="button" [class.show]="item.active" (click)="toggleMenu(item)">{{item.title}}</a>
+                @if(item.title == 'Home'){
+                <div class="dropdown-menu mt-0 border-0 bsb-zoomIn" [class.show]="item.active">
+                    <div class="row row-cols-lg-5 row-cols-1 g-xl-4 g-3" (click)="closeToggleMenu()">
+                        @for (items of item.children; track items) {
+                        <div class="col">
+                            <a [routerLink]="items.path" class="demo-box">
+                                <img [src]="items.image_url" alt="d-1" class="img-fluid demo-img">
+                                <h5 class="dropdown-item">{{items.title}}</h5>
+                            </a>
+                        </div>
+                        }
+                    </div>
+                </div>
+                } @else {
+                <ul class="dropdown-menu mt-0 border-0" [class.show]="item.active">
+                    @for (items of item.children; track items) {
+                    <li>
+                        <a class="dropdown-item" [routerLink]="items.path" (click)="closeToggleMenu()">{{items.title}}</a>
+                    </li>
+                    }
+                </ul>
+                }
+                }
+                @else {
+                <a class="nav-link" [routerLink]="item.path" (click)="closeToggleMenu()">{{item.title}}</a>
+                }
+            </li>
+            }
+        </ng-template>
+    </ul>
+</div>

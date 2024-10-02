@@ -1,0 +1,40 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+<!-- contact section starts -->
+<section class="section-b-space">
+    <div class="container">
+        <app-title [type]="'classic'" [title]="'Inform us of Yourself'" 
+            [subTitle]="'Contact us if you have any queries or merely want to say hi.'"></app-title>
+        <div class="contact-detail">
+            <div class="row g-4">
+                @for (item of topSection; track item) {
+                <div class="col-xxl-4 col-md-6">
+                    <div class="contact-detail-box">
+                        <div class="contact-icon">
+                            <i class="{{item.icons}}"></i>
+                        </div>
+                        <div>
+                            <div class="contact-detail-title">
+                                <h4>{{item.title}}</h4>
+                            </div>
+                            <div class="contact-detail-contain">
+                                <p>{{item.sub_title}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-xl-8">
+                <app-contact-form></app-contact-form>
+            </div>
+            <div class="col-xl-4">
+                <app-google-map></app-google-map>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- contact section end -->

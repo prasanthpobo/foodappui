@@ -1,0 +1,19 @@
+<div class="profile-part dropdown-button order-md-2">
+    <img class="img-fluid profile-pic" src="assets/images/svg/user-map.svg" alt="profile">
+    <!-- <div>
+        <h6 class="fw-normal">Hi, Mark Jecno</h6>
+        <h5 class="fw-medium">My Account</h5>
+    </div> -->
+    <div class="onhover-box onhover-sm">
+        <ul class="menu-list">
+            <li><a class="dropdown-item" [routerLink]="['/account/change-profile']">Profile</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/account/my-order']">My orders</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/account/saved-address']">Saved Address</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/account/saved-card']">Saved cards</a></li>
+            <li><a class="dropdown-item" [routerLink]="['/account/settings']">Settings</a></li>
+        </ul>
+        <div class="bottom-btn">
+            <a class="theme-color fw-medium" (click)="logOut()"><i class="ri-login-box-line me-2"></i>Logout</a>
+        </div>
+    </div>
+</div>

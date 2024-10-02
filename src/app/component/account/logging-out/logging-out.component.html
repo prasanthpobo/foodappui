@@ -1,0 +1,13 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="login-out">Logging Out</h1>
+        <button type="button" class="btn-close" (click)="modal.dismissAll()"></button>
+    </div>
+    <div class="modal-body">
+        <p>Are you Sure, You are logging out</p>
+    </div>
+    <div class="modal-footer">
+        <a [routerLink]="['/account/saved-card']" class="btn gray-btn me-2 mt-0" (click)="modal.dismissAll()">CANCEL</a>
+        <a [routerLink]="['/home/classic']"class="btn theme-btn mt-0" (click)="modal.dismissAll()">Log Out</a>
+    </div>
+</div>

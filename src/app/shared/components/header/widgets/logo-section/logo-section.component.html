@@ -1,0 +1,15 @@
+<div class="d-flex align-items-center gap-1">
+    @if(logo){
+    <a [routerLink]="['/home/classic']">
+        @if(routePath.includes('/home/minimal')){
+            <img class="img-fluid logo" src="assets/images/svg/logo2.svg" alt="logo">
+        } @else {
+            <img class="img-fluid logo" [src]="logo.heder_logo" alt="logo" />
+        }
+    </a>
+    }
+    <!-- <a href="javascript:void(0);" (click)="openLocation()"
+        class="btn btn-sm theme-btn location-btn mt-0 ms-3 d-flex align-content-center gap-1" [class.rounded-2]="routePath.includes('/home/compact')">
+        <i class="ri-map-pin-line"></i> Location
+    </a> -->
+</div>

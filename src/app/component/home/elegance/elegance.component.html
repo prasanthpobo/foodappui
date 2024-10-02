@@ -1,0 +1,85 @@
+<div class="skeleton-loader" [style.display]="skeletonService.isSkeleton ? 'none' : 'block'">
+    <app-skeleton-elegance></app-skeleton-elegance>
+</div>
+
+<!-- home section start -->
+<section id="home" class="home-wrapper home2 section-b-space overflow-hidden">
+    <app-elegance-home></app-elegance-home>
+</section>
+<!-- home section end -->
+
+<!-- categories section starts -->
+<div class="categories-section">
+    @if(eleganceData && eleganceData.category){
+    <img src="assets/images/popcorn.png" class="img-fluid popcorn-img" alt="">
+    <div class="container">
+        <div class="position-relative category-top">
+            <div class="swiper categories-no-arrow categories-style">
+                <div class="swiper-wrapper">
+                    <app-categories-section [type]="'basic'" [id]="eleganceData.category"></app-categories-section>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+<!-- categories section starts -->
+
+<!-- today’s deal section start -->
+@if(eleganceData && eleganceData.deal){
+<section class="section-b-space">
+    <div class="container">
+        <app-title [type]="'basic'" [animation]="true"  [title]="'Today’s Deal'" [subTitle]="'Take a benefit from our latest offers.'"></app-title>
+        <div class="position-relative">
+            <div class="swiper banner1-slider">
+                <div class="swiper-wrapper">
+                    <app-todays-deal [id]="eleganceData.deal" [type]="'basic'"></app-todays-deal>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
+<!-- today’s deal section end -->
+
+<!-- Featured Restaurants section starts -->
+<section class="restaurant-list section-b-space banner-section ratio3_2">
+    <app-product-filter-wise-data [title]="'Featured Restaurants'" [loader]="true"></app-product-filter-wise-data>
+</section>
+<!-- featured Restaurants section end -->
+
+<!-- brand section starts -->
+@if(eleganceData && eleganceData.brand){
+<section class="brand-section nav-true">
+    <img class="img-fluid item-4" src="assets/images/svg/item4.svg" alt="item-4">
+    <div class="container">
+        <app-title [type]="'basic'" [animation]="true" [title]="'Brand For You'" [subTitle]="'Browse out top brands here to discover different food cuision.'"></app-title>
+        <div class="position-relative">
+            <div class="swiper brands-logo">
+                <div class="swiper-wrapper">
+                    <app-brand-for-you [id]="eleganceData.brand"></app-brand-for-you>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
+<!-- brand section starts -->
+
+<!-- popular restaurant section starts -->
+@if(eleganceData && eleganceData.product){
+<section class="popular-restaurant section-b-space ratio3_2 overflow-hidden">
+    <img class="img-fluid item-5" src="assets/images/svg/item5.svg" alt="item-5">
+    <div class="container">
+        <app-title [type]="'basic'" [animation]="true"   [title]="'Popular Restaurants'" [subTitle]="'Find nearby popular Restaurants.'"></app-title>
+        <app-product-box [type]="'basic'" [class]="'g-4'" [id]="eleganceData.product"></app-product-box>
+    </div>
+</section>
+}
+<!-- popular restaurant section end -->
+
+<!-- app section starts -->
+<section class="app-section">
+    <app-banner-section [type]="'basic'"></app-banner-section>
+</section>
+<!-- app section starts -->

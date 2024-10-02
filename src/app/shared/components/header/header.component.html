@@ -1,0 +1,7 @@
+@if(type === 'basic'){
+<app-header-two [routePath]="routePath"></app-header-two>
+}@else if (type === 'simple') {
+<app-header-three></app-header-three>
+} @else{
+<app-header-one [routePath]="routePath"></app-header-one>
+}

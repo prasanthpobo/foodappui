@@ -1,0 +1,79 @@
+<div class="custom-container">
+    <div class="position-relative">
+        <img src="assets/images/home-bg2.png" class="img-fluid bg-home-img" alt="">
+        <div class="home-content">
+            <div class="row w-100 h-100">
+                <div class="col-sm-6 col-12">
+                    <div class="home-left-content">
+                        <label>50% off on First delivery</label>
+                        <h2>Made with love,<br />Savored with interest.</h2>
+                        <p>Browse out top categories here to discover different food cuision.
+                        </p>
+                        <div class="search-section">
+                            <form class="auth-form search-head">
+                                <div class="form-group">
+                                    <div class="form-input mb-0">
+                                        <input type="search" class="form-control search"
+                                            placeholder="Search for Restaurant"
+                                            [(ngModel)]="restaurantService.search_text"
+                                            [ngModelOptions]="{ standalone: true }"
+                                            (keyup)="restaurantService.searchKey(restaurantService.search_text)">
+                                        <i class="ri-search-line search-icon"></i>
+                                    </div>
+                                </div>
+                            </form>
+                            <a class="btn theme-btn mt-0" href="javascript:void(0)" role="button"
+                                (click)="restaurantService.searchKey(restaurantService.search_text)">Search</a>
+                        </div>
+                        @if(restaurantService.searchResult && !restaurantService.searchResultEmpty){
+                        <div class="typeahead-menu">
+                            @for (menuItem of restaurantService.searchData ; track menuItem) {
+                            <div class="ProfileCard u-cf">
+                                <div class="ProfileCard-details">
+                                    <div class="ProfileCard-realName">
+                                        <a class="realname" [routerLink]="['/order/restaurant-listing']"
+                                            (click)="restaurantService.removeFix()">{{menuItem.name }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                        }
+                        @if(restaurantService.searchResultEmpty){
+                        <div class="typeahead-menu" (clickOutside)="restaurantService.clickOutside()">
+                            <div class="ProfileCard u-cf">
+                                <div class="ProfileCard-details">
+                                    <div class="ProfileCard-realName">
+                                        <a class="realname">Opps!! There are no result found.</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                    </div>
+                </div>
+                <div class="col-sm-6 d-sm-block d-none">
+                    <div class="home-right position-relative">
+                        <img src="assets/images/mobile.png" class="img-fluid base-phone" alt="">
+                        <div class="animated-img">
+                            <div class="food1">
+                                <img src="assets/images/food1.png" data-aos="fade-down" data-aos-easing="linear"
+                                    data-aos-anchor-placement="top-center" data-aos-duration="1200" class="img-fluid"
+                                    alt="">
+                            </div>
+                            <div class="food2">
+                                <img src="assets/images/food2.png" data-aos-duration="1200" data-aos="fade-down"
+                                    data-aos-anchor-placement="bottom-center" class="img-fluid" alt="">
+                            </div>
+                            <div class="food3">
+                                <img src="assets/images/food3.png" data-aos="fade-down" data-aos-easing="linear"
+                                    data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000" class="img-fluid"
+                                    alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

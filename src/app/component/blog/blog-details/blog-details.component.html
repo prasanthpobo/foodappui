@@ -1,0 +1,37 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+<!-- blog section stars -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="blog-boxs">
+            <div class="row g-3">
+                <div class="col-lg-3 order-lg-0 order-1">
+                    <app-blog-filter [blog]="blog"></app-blog-filter>
+                </div>
+                <div class="col-lg-9">
+                    @for (item of blogData; track item) {
+                    <div class="blog-wrap">
+                        <!-- Blog Section Start -->
+                        <div class="blog-box blog-detail ratio_40">
+                            <app-blog-box [data]="item"></app-blog-box>
+                        </div>
+                        <!-- Blog Section End -->
+                        <!-- Comment Section Start -->
+                        <div class="comments-section">
+                            <app-comments-section [data]="item"></app-comments-section>
+                        </div>
+                        <!-- Comment Section End -->
+                    </div>
+                    }
+                    <!-- Reply From Section Start -->
+                    <div class="replay-section">
+                        <app-leave-comment></app-leave-comment>
+                    </div>
+                    <!-- Reply From Section End -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- blog section end -->

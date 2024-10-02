@@ -1,0 +1,15 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5">
+            Delete Product
+        </h1>
+        <button type="button" class="btn-close" (click)="modal.dismissAll()" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <p>Are you Sure, Your Product is Delete</p>
+    </div>
+    <div class="modal-footer">
+        <a [routerLink]="['pages/wishlist']" class="btn gray-btn mt-0" (click)="modal.dismissAll()">CANCEL</a>
+        <a  class="btn theme-btn remove-btn mt-0" (click)="remove(index)">Remove</a>
+    </div>
+</div>

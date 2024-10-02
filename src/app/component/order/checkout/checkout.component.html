@@ -1,0 +1,34 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+
+<!--  account section starts -->
+<section class="account-section section-b-space pt-0">
+    <div class="container">
+        <div class="layout-sec">
+            <div class="row g-lg-4 g-4">
+                <app-order></app-order>
+                <div class="col-lg-8">
+                    <!-- <div class="account-part mt-0">
+                                            <img class="img-fluid account-img" src="assets/images/account.svg" alt="account">
+                                            <div class="title mb-0">
+                                                <div class="loader-line"></div>
+                                                <h3>Account</h3>
+                                                <p>To place your order now, log in to in your existing account or sign up</p>
+                                                <div class="account-btn d-flex justify-content-center gap-2">
+                                                    <a [routerLink]="['/pages/sign-in']" class="btn theme-outline mt-0">SIGN IN</a>
+                                                    <a [routerLink]="['/pages/sign-up']" class="btn theme-outline mt-0">SIGN UP</a>
+                                                </div>
+                                            </div>
+                                           
+                                        </div> -->
+                    <div><app-order-cart-items [title]="false" [buttonTitle]="'Pay Now'" [showBillings]="false" ></app-order-cart-items></div>
+                </div>
+                <div class="col-lg-4">
+                    <app-order-cart-items [title]="false" [showPayButton]="true" [buttonURL]="'/order/address'" [buttonTitle]="'CheckOut'" [showBillings]="true" ></app-order-cart-items>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- account section end -->

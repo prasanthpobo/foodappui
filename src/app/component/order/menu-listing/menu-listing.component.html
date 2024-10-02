@@ -1,0 +1,94 @@
+<!-- banner section starts -->
+<section class="product-banner-section">
+    <div class="container">
+        @for (item of selectedProduct; track $index) {
+        <div class="restaurant-box">
+            <div class="restaurant-image">
+                <img class="img-fluid img" [src]="item.brand" alt="brand13">
+            </div>
+            <div class="restaurant-details">
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+                    <div>
+                        <h2 class="restaurant-name ">{{item.name}}</h2>
+                        <h4 class="restaurant-place">{{item.country}}.</h4>
+                    </div>
+                    <div class="restaurant-description">
+                        <div class="categories-icon">
+                            <a href="javascript:void(0)" id="liveToastBtn">
+                                <i class="ri-share-line icon text-white"></i>
+                            </a>
+                            <a [ngClass]="isLike ? 'like-btn active':'like-btn animate inactive'"  (click)="isLike =!isLike">
+                                <i class="ri-heart-3-fill fill-icon"></i>
+                                <i class="ri-heart-3-line text-white outline-icon"></i>
+
+                                <div class="effect-group">
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                    <span class="effect"></span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="distance d-flex align-items-center">
+                            <h4 class="text-white shop-time ">{{item.distance}}km</h4>
+                            <h4 class="rating-star">
+                                <span class="star"><i class="ri-star-s-fill"></i></span> {{item.rating}} (1k+ Reviews)
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</section>
+<!-- banner section end -->
+
+<!-- tab section starts -->
+<section class="tab-details-section section-b-space">
+    <div class="container">
+        <div class="category-detail-tab">
+            <div class="row g-4">
+                <div class="col-lg-9">
+                    <div class="menu-button d-inline-block d-lg-none" (click)="orderService.mobileMenu= true"
+                        (clickOutside)="orderService.mobileMenu = false">
+                        <a href="javascript:void(0)"><i class="ri-book-open-line"></i> Menu</a>
+                    </div>
+                    <ul class="nav nav-tabs tab-style1" ngbNav #nav="ngbNav" [(activeId)]="active">
+                        <li class="nav-item" [ngbNavItem]="1">
+                            <button class="nav-link" type="button" ngbNavLink>Order Online</button>
+                            <ng-template ngbNavContent>
+                                <app-order-online [menuList]="menuList"></app-order-online>
+                            </ng-template>
+                        </li>
+                        <li class="nav-item" [ngbNavItem]="2">
+                            <button class="nav-link" type="button" ngbNavLink>Overview</button>
+                            <ng-template ngbNavContent>
+                                <app-overview [overView]="selectedProduct"></app-overview>
+                            </ng-template>
+                        </li>
+                        <li class="nav-item" [ngbNavItem]="3">
+                            <button class="nav-link" type="button" ngbNavLink>Photos</button>
+                            <ng-template ngbNavContent>
+                                <app-photos></app-photos>
+                            </ng-template>
+                        </li>
+                        <li class="nav-item" [ngbNavItem]="4">
+                            <button class="nav-link" type="button" ngbNavLink>Reviews</button>
+                            <ng-template ngbNavContent>
+                                <app-review></app-review>
+                            </ng-template>
+                        </li>
+                    </ul>
+                    <div class="tab-content product-details-content" [ngbNavOutlet]="nav">
+                    </div>
+                </div>
+                <div class="col-lg-3 product-details-content">
+                    <app-order-cart-items [title]="true" [buttonTitle]="'Proceed to payment'"></app-order-cart-items>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- tab section end -->

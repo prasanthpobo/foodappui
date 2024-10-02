@@ -1,0 +1,106 @@
+<div class="skeleton-loader" [style.display]="skeletonService.isSkeleton ? 'none' : 'block'">
+    <app-skeleton-compact></app-skeleton-compact>
+</div>
+
+<div class="line-effect">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-6"></div>
+            <div class="col-md-4 col-6"></div>
+            <div class="col-4 d-md-inline-block d-none"></div>
+        </div>
+    </div>
+</div>
+
+<!-- home section start -->
+<section class="home4 section-b-space bg-size"
+    [ngStyle]="{'background-image': 'url(' + 'assets/images/home-bg3.jpg' + ')'}">
+    <app-compact-top-section></app-compact-top-section>
+</section>
+<!-- home section end -->
+
+<!-- marquee section start -->
+<div class="quote-panel">
+    <app-marquee></app-marquee>
+</div>
+<!-- marquee section start -->
+
+<!-- categories section starts -->
+@if(compactData && compactData.category){
+<section class="categories-section category-outer nav-true">
+    <div class="container">
+        <app-title [type]="'basic'" [title]="'Categories'" [class]="'title-border'" [textClass]="'space-family'"
+            [subTitle]="'Browse out top categories here to discover different food cuision.'"></app-title>
+        <div class="theme-arrow">
+            <div class="swiper categories-slider categories-style">
+                <div class="swiper-wrapper">
+                    <app-categories-section [type]="'basic'" [id]="compactData.category"></app-categories-section>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
+<!-- categories section end -->
+
+<!-- deal section starts -->
+@if(compactData && compactData.deal){
+<section class="section-b-space deal-section">
+    <div class="container">
+        <app-title [type]="'basic'" [title]="'Today’s Deal'" [class]="'title-border'" [textClass]="'space-family'"
+            [subTitle]="'Take a benefit from our latest offers.'"></app-title>
+        <app-todays-deal [id]="compactData.deal" [type]="'simple'"></app-todays-deal>
+    </div>
+</section>
+}
+<!-- deal section end -->
+
+<!-- popular restaurant section starts -->
+@if(compactData && compactData.featured_restaurants){
+<section class="popular-restaurant banner-section section-b-space ratio3_2 overflow-hidden">
+    <img class="img-fluid item-5" src="assets/images/svg/item5.svg" alt="item-5">
+    <div class="container">
+        <app-title [type]="'basic'" [title]="'Featured Restaurants'" [class]="'title-border'"
+            [textClass]="'space-family'" [subTitle]="'Find nearby popular Restaurants.'"></app-title>
+        <app-product-box [type]="'premium'" [id]="compactData.featured_restaurants"></app-product-box>
+    </div>
+</section>
+}
+<!-- popular restaurant section end -->
+
+@if(compactData && compactData.brand){
+<!-- brand section starts -->
+<section class="brand-section nav-true">
+    <img class="img-fluid item-4" src="assets/images/svg/item4.svg" alt="item-4">
+    <div class="container">
+        <app-title [type]="'basic'" [title]="'Brand For You'" [class]="'title-border'"
+            [subTitle]="'Browse out top brands here to discover different food cuision.'"></app-title>
+        <div class="theme-arrow">
+            <div class="swiper brands-logo">
+                <div class="swiper-wrapper">
+                    <app-brand-for-you [id]="compactData.brand"></app-brand-for-you>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- brand section end -->
+}
+
+<!-- popular restaurant section starts -->
+@if(compactData && compactData.popular_restaurants){
+<section class="section-b-space ratio3_2 overflow-hidden">
+    <div class="container">
+        <app-title [type]="'basic'" [title]="'Popular Restaurants'" [class]="'title-border'"
+            [subTitle]="'Find nearby popular Restaurants.'"></app-title>
+        <app-product-box [type]="'premium'" [id]="compactData.popular_restaurants"></app-product-box>
+    </div>
+</section>
+}
+<!-- popular restaurant section end -->
+
+<!-- marquee section start -->
+<div class="quote-panel footer-quote">
+    <app-marquee></app-marquee>
+</div>
+<!-- marquee section start -->

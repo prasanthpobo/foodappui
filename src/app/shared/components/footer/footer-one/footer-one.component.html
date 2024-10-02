@@ -1,0 +1,53 @@
+<footer class="footer-section section-t-space" [class.footer-sm]="routePath.includes('/home/compact')">
+    @if(routePath.includes('/home/compact')){
+    <img src="assets/images/footer-bg.jpg" class="img-fluid footer-img" alt="">
+    }
+    <div class="subscribe-section">
+        <div [ngClass]="routePath.includes('/home/compact') ? 'custom-container':'container'">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="subscribe-part">
+                        @if(footer){
+                        <h5>{{footer.footer_news_latter.title}}</h5>
+                        }
+                        <div class="position-relative w-100">
+                            <input type="email" class="form-control subscribe-form-control"
+                                placeholder="Enter your Email" />
+                            <a href="javascript:void(0);" class="btn theme-btn subscribe-btn mt-0">Subscribe Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div [ngClass]="routePath.includes('/home/compact') ? 'custom-container':'container'">
+        <div  [ngClass]="routePath.includes('/home/compact') ? 'main-footer border-top-cls':'main-footer'">
+            <div class="row g-3">
+                <div class="col-xl-4 col-lg-12">
+                    <div class="footer-logo-part">
+                        @if(logo){
+                        <img class="img-fluid logo" [src]="logo.footer_logo" alt="logo" />
+                        }
+                        @if(footer){
+                        <p>{{footer.description}}</p>
+                        }
+                        @if(footer){
+                        <app-social-media [footer]="footer"> </app-social-media>
+                        }
+                    </div>
+                </div>
+                <div class="col-xl-8">
+                    <app-common-pages [footer]="footer"></app-common-pages>
+                </div>
+            </div>
+        </div>
+        <div class="bottom-footer-part">
+            @if (footer) {
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <h6>{{footer.copy_right_text}}</h6>
+                <img class="img-fluid cards" [src]="footer.payment_gateway" alt="card">
+            </div>
+            }
+        </div>
+    </div>
+</footer>

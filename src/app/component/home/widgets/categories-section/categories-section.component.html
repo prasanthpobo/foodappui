@@ -1,0 +1,14 @@
+@if(type === 'basic'){
+<owl-carousel-o [options]="customOptions">
+    @for (item of categories; track item) {
+    <ng-template carouselSlide>
+        <div class="swiper-slide" style="margin-right: 20px;">
+            <a [routerLink]="['/order/restaurant-listing']" class="food-categories">
+                <img class="img-fluid categories-img" [src]="item.image_Url" alt="p-1" />
+                <h4 class="dark-text">{{item.title}}</h4>
+            </a>
+        </div>
+    </ng-template>
+    }
+</owl-carousel-o>
+}

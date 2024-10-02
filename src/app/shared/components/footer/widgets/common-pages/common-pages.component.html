@@ -1,0 +1,22 @@
+<div class="row g-3">
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+        <div [class.open-footer-content]="isCompany" (click)="isCompany =!isCompany">
+        <app-company [footer]="footer"></app-company>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+        <div [class.open-footer-content]="isAccount" (click)="isAccount =!isAccount">
+            <app-account [footer]="footer"></app-account>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+            <div [class.open-footer-content]="isLink" (click)="isLink =!isLink">
+            <app-useful-links [footer]="footer"></app-useful-links>
+        </div>
+    </div>
+    <div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-12">
+            <div [class.open-footer-content]="isBrand" (click)="isBrand =!isBrand">
+            <app-top-brands [footer]="footer"></app-top-brands>
+        </div>
+    </div>
+</div>

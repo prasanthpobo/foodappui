@@ -1,0 +1,33 @@
+
+<div class="row g-md-4 g-3 row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 custom-sm-100 ratio_110">
+    @for (item of data; track item) {
+    <div class="col">
+        <div class="restaurant-wrapper">
+            <div class="restaurant-img">
+                <a [routerLink]="['/order/menu-listing',item.slug]" class="bg-size"
+                    [ngStyle]="{'background-image': 'url(' +  item.image_url  + ')'}">
+                    <img class="product-img-top w-100 bg-img" [src]="item.image_url" alt="vp1" style="display: none;">
+                </a>
+                @if(item.isOffer){
+                <div class="offers">
+                    <h6>{{item.offer.title}}</h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <h4>{{item.offer.offer}}</h4>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="restaurant-content">
+                <a [routerLink]="['/order/menu-listing',item.slug]">
+                    <h4 class="space-family">{{item.name}}</h4>
+                </a>
+                <h5 class="product-items">{{item.description}}</h5>
+                <ul class="restaurant-details">
+                    <li>{{item.distance}} km</li>
+                    <li>{{item.time}} min</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    }
+</div>

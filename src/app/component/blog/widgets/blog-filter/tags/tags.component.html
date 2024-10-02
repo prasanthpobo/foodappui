@@ -1,0 +1,7 @@
+<ul class="filter-item-list">
+    @for (item of data; track item) {
+        <li>
+            <a [routerLink]="['/blog/grid-left-sidebar']">{{item.title}}</a>
+        </li>
+    }
+</ul>

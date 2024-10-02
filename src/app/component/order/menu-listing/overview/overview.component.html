@@ -1,0 +1,18 @@
+<div class="overview-section">
+    <div class="row g-3">
+        @for (item of overViewData; track item) {
+        <div class="col-md-6 col-12">
+            @for (items of item.items; track items; let index = $index) {
+            <div class="overview-content" [ngClass]="{'mt-0': index === 0}">
+                <h6 class="overview-heading">{{items.title}}</h6>
+                <ul class="content-list">
+                    @for (list of items.data; track list) {
+                    <li>{{list.item}}</li>
+                    }
+                </ul>
+            </div>
+            }   
+        </div>
+        }
+    </div>
+</div>

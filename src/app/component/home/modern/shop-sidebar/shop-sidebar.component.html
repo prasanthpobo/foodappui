@@ -1,0 +1,19 @@
+<a [routerLink]="['/home/classic']" class="sidebar-logo">
+    <img class="img-fluid logo" src="assets/images/food-point.png" alt="logo">
+</a>
+<ul>
+    <li class="d-lg-none d-block sidebar-back">
+        <a href="javascript:void(0);">
+            <div (click)="navService.isOpen = false">
+                <div class="text-start"><i class="ri-arrow-left-line"></i> Back</div>
+            </div>
+        </a>
+    </li>
+    <li class="active"><a [routerLink]="['/home/compact']"><i class="ri-home-4-line me-3"></i>Home</a></li>
+    <li> <a [routerLink]="['/order/offer']"><i class="ri-discount-percent-line me-3"></i>Offers</a> </li>
+    <li> <a [routerLink]="['/contact']"><i class="ri-contacts-line me-3"></i>Contact</a> </li>
+    <li> <a [routerLink]="['/about']"><i class="ri-information-2-line me-3"></i>About</a></li>
+    <li> <a [routerLink]="['/blog/blog-listing']"><i class="ri-article-line me-3"></i>Articles</a> </li>
+    <li> <a [routerLink]="['/pages/faqs']"><i class="ri-question-line me-3"></i>FAQs</a></li>
+    <li> <a [routerLink]="['/account/settings']"><i class="ri-equalizer-2-line me-3"></i>Settings</a></li>
+</ul>

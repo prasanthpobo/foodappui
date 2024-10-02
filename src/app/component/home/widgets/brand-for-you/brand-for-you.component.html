@@ -1,0 +1,16 @@
+<owl-carousel-o [options]="customOptions">
+    @for (item of brandData; track item) {
+    <ng-template carouselSlide>
+        <div class="swiper-slide">
+            <div class="brand-box">
+                <a [routerLink]="item.url" class="food-brands">
+                    <img class="img-fluid brand-img" [src]="item.image_url" alt="{{item.alt}}" />
+                </a>
+                <a [routerLink]="item.url">
+                    <h4>{{item.name}}</h4>
+                </a>
+            </div>
+        </div>
+    </ng-template>
+    }
+</owl-carousel-o>

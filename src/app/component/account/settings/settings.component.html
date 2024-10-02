@@ -1,0 +1,67 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+
+<!-- profile section starts -->
+<section class="profile-section section-b-space">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-lg-3">
+                <app-profile-section></app-profile-section>
+            </div>
+            <div class="col-lg-9">
+                <div class="setting-content">
+                    <app-title [type]="'simple'" [title]="'Setting'" [animation]="false"></app-title>
+                    <ul class="notification-setting">
+                        <li>
+                            <div class="notification pt-0">
+                                <h6 class="fw-normal dark-text">Offer Update</h6>
+                                <div class="switch-btn">
+                                    <input type="checkbox" checked>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="notification">
+                                <h6 class="fw-normal dark-text">Order Update</h6>
+                                <div class="switch-btn">
+                                    <input type="checkbox">
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="notification pb-0">
+                                <h6 class="fw-normal dark-text">New Update</h6>
+                                <div class="switch-btn">
+                                    <input type="checkbox" checked="">
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="delete-account">
+                        <h3 class="fw-medium dark-text">Delete Your Account</h3>
+                        <p class="content-color">
+                            Hi <span class="dark-text fw-medium">Mark Jecno</span>,
+                        </p>
+                        <p class="content-color">
+                            We are sorry to here you would like to delete your account.
+                        </p>
+                        <h6 class="dark-text fw-medium mt-sm-3 mt-2">Note :</h6>
+                        <p class="content-color">
+                            Deleting your account will permanently remove your profile,
+                            personal settings, and all other associated information. once
+                            your account is deleted, you will be logged out and will be
+                            unable to log back in.
+                        </p>
+                        <p class="content-color mt-2">
+                            If you understand and agree to the above statement, and would
+                            still like to delete your account, than click below
+                        </p>
+                        <a (click)="deleteAccount()" class="btn theme-btn delete-btn mt-3">Delete Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- profile section end -->

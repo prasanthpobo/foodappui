@@ -1,0 +1,38 @@
+<div class="skeleton-loader" [style.display]="skeletonService.isSkeleton ? 'none' : 'block'">
+      <app-skeleton-minimal></app-skeleton-minimal>
+</div>
+<!-- home section start -->
+<section class="pt-4 home3">
+     <app-minimal-top-section></app-minimal-top-section>
+</section>
+<!-- home section end -->
+
+<!-- service section start -->
+<section class="service-section section-b-space">
+    <app-service [type]="'simple'"></app-service>
+</section>
+<!-- service section end -->
+
+<!-- title start -->
+<div class="container">
+    <div class="title-center">
+        <h2>Tasty food to your destination <span> in 20 mins.</span></h2>
+    </div>
+</div>
+<!-- title end -->
+
+<!-- popular restaurant section starts -->
+@if(minimalData && minimalData.product){
+<section class="popular-restaurant section-b-space ratio3_2 overflow-hidden">
+    <div class="container">
+        <app-product-box [type]="'standard'" [id]="minimalData.product"></app-product-box>
+    </div>
+</section>
+}
+<!-- popular restaurant section end -->
+
+<!-- app section starts -->
+<section class="container app-container pt-0">
+    <app-banner-section [type]="'simple'"></app-banner-section>
+</section>
+<!-- app section end -->

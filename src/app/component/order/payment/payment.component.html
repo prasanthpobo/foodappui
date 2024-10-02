@@ -1,0 +1,74 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+<!--  account section starts -->
+<section class="account-section section-b-space pt-0 ">
+    <div class="container">
+        <div class="layout-sec">
+            <div class="row g-lg-4 g-4">
+                <app-order></app-order>
+                <div class="col-lg-8">
+                    <div class="payment-section mt-0">
+                        <app-title [type]="'simple'" [class]="'mb-0'" [title]="'Choose Payment Method'"
+                            [subTitle]="'There are many Types of Payment Method'"></app-title>
+
+                        <div ngbAccordion class="accordion payment-accordion">
+                            <!-- <div ngbAccordionItem class="accordion-item">
+                                <h2 ngbAccordionHeader class="accordion-header">
+                                    <button ngbAccordionButton class="accordion-button"><b>Scan to pay</b></button>
+                                </h2>
+                                <div ngbAccordionCollapse class="accordion-collapse collapse show">
+                                    <div ngbAccordionBody class="accordion-body">
+                                        <ng-template>
+                                            <app-credit-debit-card></app-credit-debit-card>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div> -->
+                            <div ngbAccordionItem [collapsed]="false" class="accordion-item">
+                                <h2 ngbAccordionHeader class="accordion-header">
+                                    <button ngbAccordionButton class="accordion-button"><b>Payment options</b></button>
+                                </h2>
+                                <div ngbAccordionCollapse class="accordion-collapse collapse show">
+                                    <div ngbAccordionBody class="accordion-body">
+                                        <ng-template>
+                                            <div class="row">
+                                                <div class="col-6" >
+                                                  
+                                                    <app-my-wallet></app-my-wallet>
+                                                </div>
+                                                <div class="col-6" style="text-align: center;">
+                                                    <span>Scan to pay</span>
+                                                    <app-credit-debit-card></app-credit-debit-card>
+                                                </div>
+                                            </div>
+
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- <div ngbAccordionItem class="accordion-item">
+                                <h2 ngbAccordionHeader class="accordion-header">
+                                    <button ngbAccordionButton class="accordion-button">Delivery Option</button>
+                                </h2>
+                                <div ngbAccordionCollapse class="accordion-collapse collapse show">
+                                    <div ngbAccordionBody class="accordion-body">
+                                        <ng-template>
+                                            <app-delivery-option></app-delivery-option>
+                                        </ng-template>
+                                    </div>
+                                </div>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <app-order-cart-items [title]="false" [buttonURL]="'/order/confirm-order'"
+                        [buttonTitle]="'Pay Now'"></app-order-cart-items>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- account section end -->

@@ -1,0 +1,17 @@
+<section class="page-head-section">
+    <div class="container page-heading">
+        @if(breadcrumb.title){
+            <h2 class="h3 mb-3 text-white text-center">{{breadcrumb.title}}</h2>
+        }
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb flex-lg-nowrap justify-content-center justify-content-lg-star">
+                @if(breadcrumb.page){
+                    <li class="breadcrumb-item"><a [routerLink]="['/home/classic']"><i class="ri-home-line"></i>{{breadcrumb.page}}</a></li>
+                }
+                 @if(breadcrumb.sub_page){
+                     <li class="breadcrumb-item active" aria-current="page">{{breadcrumb.sub_page}}</li>
+                 }
+            </ol>
+        </nav>
+    </div>
+</section>

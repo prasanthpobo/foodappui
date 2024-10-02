@@ -1,0 +1,40 @@
+<div class="row g-md-4 g-3">
+    @for (item of data; track item) {
+    <div class="col-xl-3 col-lg-4 col-md-6">
+        <div class="vertical-product-box product-style-3">
+            <div class="vertical-product-box-img">
+                <a [routerLink]="['/order/menu-listing',item.slug]" class="bg-size" [ngStyle]="{'background-image': 'url(' +  item.image_url  + ')'}">
+                    <img class="product-img-top w-100 bg-img" [src]="item.image_url" alt="vp1" style="display: none;">
+                </a>
+                @if(item.isOffer){
+                <div class="offers">
+                    <img src="assets/images/shape.png" alt="shape" class="img-fluid">
+                    <h6>{{item.offer.title}}</h6>
+                    <div class="d-flex align-items-center justify-content-end">
+                        <h4>{{item.offer.offer}}</h4>
+                    </div>
+                </div>
+                }
+            </div>
+            <div class="vertical-product-body">
+                <div class="d-flex align-items-center justify-content-between">
+                    <a [routerLink]="['/order/menu-listing',item.slug]">
+                        <h4 class="vertical-product-title">{{item.name}}</h4>
+                    </a>
+                    <h6 class="rating-star">
+                        <span class="star"><i class="ri-star-s-fill"></i></span>{{item.rating}}
+                    </h6>
+                </div>
+                <h5 class="product-items">{{item.description}}</h5>
+                <div class="location-distance d-flex align-items-center justify-content-between pt-sm-3 pt-2">
+                    <h5 class="place">{{item.country}}</h5>
+                    <ul class="distance">
+                        <li><i class="ri-map-pin-fill icon"></i> {{item.distance}} km</li>
+                        <li><i class="ri-time-fill icon"></i> {{item.time}} min</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>

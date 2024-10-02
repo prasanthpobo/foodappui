@@ -1,0 +1,30 @@
+<div class="row g-4">
+    @for (item of blog| slice: (currentPage - 1) * pageSize: currentPage * pageSize; track item) {
+    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+        <div class="blog-box">
+            <div class="blog-image">
+                <a [routerLink]="['/blog/blog-details',item.slug_url]" class="bg-size"
+                    [ngStyle]="{'background-image': 'url(' +  item.image_url  + ')'}">
+                    <img class="img-fluid bg-img" [src]="item.image_url" alt="blog1" style="display: none;">
+                </a>
+            </div>
+            <div class="blog-details">
+                <h6>{{item.title}}</h6>
+                <div class="border-0">
+                    <a [routerLink]="['/blog/blog-details',item.slug_url]">
+                        <h5>{{item.sub_title}}</h5>
+                    </a>
+                </div>
+                <p>{{item.date}}</p>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+<nav class="custom-pagination">
+    <ul class="pagination justify-content-center">
+        @if (blog && blog.length) {
+        <ngb-pagination [collectionSize]="blog.length" [(page)]="currentPage" [pageSize]="pageSize"></ngb-pagination>
+        }
+    </ul>
+</nav>

@@ -1,0 +1,36 @@
+<div class="row g-3 ratio2_3">
+    @for (item of data; track item) {
+    <div class="col-xl-4 col-sm-6">
+        <div class="vertical-product-box pharmacy-product-box">
+            <div>
+                <div class="pharmacy-product-img bg-white bg-size" [ngStyle]="{'background-image': 'url(' +  item.image_url  + ')'}">
+                    <img class="bg-img img" [src]="item.image_url" alt="p1" style="display: none;">
+                </div>
+            </div>
+            <div class="pharmacy-product-details">
+                <h6 class="content-color ">{{item.name}}</h6>
+                <h5 class="product-name dark-text">{{item.description}}</h5>
+                <div class="d-flex align-items-center justify-content-between my-1">
+                    <h5 class="fw-medium theme-color price"> ${{item.price}} <span
+                            class="content-color"><del>${{item.price}}</del></span>
+                    </h5>
+                    <div class="rating">
+                        <img class="star-icon" src="assets/images/svg/rating-star.svg" alt="star">
+                        <h6>4.2</h6>
+                    </div>
+                </div>
+                <div class="bottom-panel d-flex align-items-center justify-content-between gap-1">
+                    <div class="plus-minus">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <i class="ri-subtract-line sub" (click)="increaseDecrease(item.id ,-1)"></i>
+                            <input type="number" value="{{item.value}}">
+                            <i class="ri-add-line add" (click)="increaseDecrease(item.id ,+1)"></i>
+                        </div>
+                    </div>
+                    <a [routerLink]="['/order/checkout']" class="btn theme-outline cart-btn rounded-2">Add Cart</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>

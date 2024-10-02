@@ -1,0 +1,44 @@
+<div class="process-section">
+    <ul class="process-list">
+        <li routerLinkActive="active" [class.active]="address.isActive|| payment.isActive|| confirm.isActive">
+            <a [routerLink]="['/order/checkout']">
+                <div class="process-icon">
+                    <img class="img-fluid icon" src="assets/images/svg/user.svg" alt="user">
+                </div>
+                <h6>Cart Item</h6>
+            </a>
+        </li>
+        <li routerLinkActive="active" #address="routerLinkActive" [class.done]="payment.isActive || confirm.isActive">
+            <a [routerLink]="['/order/address']">
+                <div class="process-icon">
+                    @if(payment.isActive || confirm.isActive){
+                    <img class="img-fluid icon" src="{{payment.isActive || confirm.isActive ? 'assets/images/svg/location-active.svg' : 'assets/images/svg/location.svg'}}" alt="location">
+                    } @else {
+                    <img class="img-fluid icon" src="{{address.isActive ? 'assets/images/svg/location-active.svg' : 'assets/images/svg/location.svg'}}" alt="location">
+                    }
+                </div>
+                <h6>Address</h6>
+            </a>
+        </li>
+        <li routerLinkActive="active" #payment="routerLinkActive" [class.done]="confirm.isActive">
+            <a [routerLink]="['/order/payment']">
+                <div class="process-icon">
+                    @if(confirm.isActive){
+                        <img class="img-fluid icon" src="{{confirm.isActive ? 'assets/images/svg/wallet-add-active.svg' : 'assets/images/svg/wallet-add.svg'}}" alt="wallet-add">
+                    } @else {
+                        <img class="img-fluid icon" src="{{payment.isActive ? 'assets/images/svg/wallet-add-active.svg' : 'assets/images/svg/wallet-add.svg'}}" alt="wallet-add">
+                    }
+                </div>
+                <h6>Payment</h6>
+            </a>
+        </li>
+        <li routerLinkActive="active" #confirm="routerLinkActive">
+            <a [routerLink]="['/order/confirm-order']">
+                <div class="process-icon">
+                    <img class="img-fluid icon" src="{{confirm.isActive ? 'assets/images/svg/verify-active.svg' : 'assets/images/svg/verify.svg'}}" alt="verify">
+                </div>
+                <h6>Confirm</h6>
+            </a>
+        </li>
+    </ul>
+</div>

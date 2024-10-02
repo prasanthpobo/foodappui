@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="title restaurant-title w-border pb-0">
+        <div class="loader-line"></div> 
+        <h2>Available Coupons</h2>
+        <ul class="nav nav-pills restaurant-tab tab-style2 w-100 border-0 m-0">
+            @for (item of tabData; track item) {
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" [ngClass]="{'active': openTab == item.category}"
+                    (click)="changeTab(item.category)">{{item.name}}</button>
+            </li>
+            }
+        </ul>
+    </div>
+    <div class="tab-content">
+        <div class="tab-pane fade show active">
+            <div class="row g-4">
+                @for (item of filterData; track item) {
+                <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+                    <div class="coupon-box">
+                        <div class="coupon-name">
+                            <div class="coupon-img">
+                                <img class="img-fluid img" [src]="item.image_url" alt="c1">
+                            </div>
+                            <div
+                                class="coupon-name-content d-flex align-items-center justify-content-between flex-wrap">
+                                <div>
+                                    <h5 class="fw-semibold dark-text">{{item.title}}</h5>
+                                    <h6 class="content-color">{{item.sub_title}}</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="coupon-content">
+                            <h6 class="fw-medium dark-text">{{item.description}}</h6>
+                            <p>{{item.condition}}
+                            </p>
+                            <div class="coupon-apply">
+                                <h6 class="coupon-code success-color">{{item.coupon_code}}</h6>
+                                <a href="javascript:void(0)" class="btn theme-outline copy-btn mt-0 rounded-2"
+                                    (click)="copyMessage(item.coupon_code)">Copy Code</a>
+                            </div>
+                        </div>
+                        <img class="img-fluid coupon-bottom" src="assets/images/svg/coupon-bottom.svg"
+                            alt="border-bottom">
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

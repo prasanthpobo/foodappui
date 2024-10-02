@@ -1,0 +1,30 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="addCard">Add New Card</h1>
+        <button type="button" class="btn-close" (click)="modal.dismissAll()"></button>
+    </div>
+    <div class="modal-body">
+        <form class="row g-3">
+            <div class="col-md-12">
+                <label for="cardname" class="form-label">Card Holder Name</label>
+                <input type="text" class="form-control" id="cardname" placeholder="Enter your last name">
+            </div>
+            <div class="col-md-12">
+                <label for="cardnumber" class="form-label">Card Number</label>
+                <input type="number" class="form-control" id="cardnumber" placeholder="Enter card number">
+            </div>
+            <div class="col-md-8">
+                <label for="carddate" class="form-label">Exp. Date</label>
+                <input type="date" class="form-control" id="carddate">
+            </div>
+            <div class="col-md-4">
+                <label for="cardcvv" class="form-label">CVV</label>
+                <input type="number" class="form-control" id="cardcvv" placeholder="Enter your cvv">
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <a [routerLink]="['/account/saved-card']" class="btn gray-btn mt-0" (click)="modal.dismissAll()">CANCEL</a>
+        <a [routerLink]="['/account/saved-card']" class="btn theme-btn mt-0" (click)="modal.dismissAll()">Add Card</a>
+    </div>
+</div>

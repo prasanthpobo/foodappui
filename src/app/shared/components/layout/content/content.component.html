@@ -1,0 +1,44 @@
+<!-- Header section start -->
+
+@if(routePath.includes('/home/modern')){
+<header class="header2">
+    <app-header [type]="'basic'" [routePath]="routePath"></app-header>
+</header>
+} @else if (routePath.includes('/pages/coming-soon')) {
+<header>
+    <app-header [type]="'simple'"></app-header>
+</header>
+} @else {
+<header [class.header-light]="routePath.includes('/home/minimal')">
+    <app-header [routePath]="routePath"></app-header>
+</header>
+}
+<!-- Header Section end -->
+
+<router-outlet></router-outlet>
+
+<!-- footer section starts -->
+@if(routePath.includes('/home/minimal')){
+<app-footer [type]="'basic'"></app-footer>
+} @else if(!routePath.includes('/home/modern') && !routePath.includes('/pages/coming-soon') ){
+<app-footer [type]="'simple'" [routePath]="routePath"></app-footer>
+}
+<!-- footer section end -->
+
+<!-- mobile fix menu end -->
+@if(!routePath.includes('/pages/sign-up') && !routePath.includes('/pages/sign-in') &&
+!routePath.includes('/pages/otp') && !routePath.includes('/pages/empty-cart')
+&& !routePath.includes('/pages/404')){
+<app-mobile-menu></app-mobile-menu>
+}
+<!-- mobile fix menu end -->
+
+<!-- theme btn start -->
+
+
+@if(!routePath.includes('/pages/coming-soon')){ 
+    <app-customizer></app-customizer>
+}
+
+
+<!-- theme btn end -->

@@ -1,0 +1,33 @@
+<div class="title-box">
+    <h4 class="heading">Comments</h4>
+</div>
+<div class="comment-wrapper">
+    <ul class="comment-list">
+        @for (item of data.comment; track item) {
+        <li [class.reply-li]="item.replay">
+            <div class="comment-box">
+                <div class="d-flex align-items-center gap-3">
+                    <div class="img-box">
+                        <img class="img-fluid img" class="img-fluid img" [src]="item.image_url" alt="post">
+                    </div>
+                    <div class="avatar-content">
+                        <div class="name-box">
+                            <div class="user-info">
+                                <h5>{{item.name}}</h5>
+                                <span> {{item.date}}</span>
+                            </div>
+                        </div>
+                        <div class="action-box d-flex align-items-center gap-2 ms-auto">
+                            <a href="javascript:void(0)" class="replay-btn"><i class="ri-reply-fill"></i>
+                                Reply</a>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    {{item.comment}}
+                </p>
+            </div>
+        </li>
+        }
+    </ul>
+</div>

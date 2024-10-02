@@ -1,0 +1,60 @@
+<img src="assets/images/home-bg3.jpg" class="img-fluid bg-img" alt="" style="display: none;">
+<div class="custom-container">
+    <div class="row">
+        <div class="col-3 d-lg-block d-none">
+            <img src="assets/images/1.png" class="img-fluid" alt="">
+        </div>
+        <div class="col-lg-6 col-12">
+            <div class="home-content">
+                <h1 class="space-family">Made with <span>love, Savored</span> with interest.</h1>
+                <p>
+                    Numerous local menus make it easy to find delicious meals. Eat in comfort with delivery
+                    services right to your door.
+                </p>
+                <form>
+                    <div class="">
+                        <input type="text" class="form-control" placeholder="Search for restaurant"
+                            [(ngModel)]="restaurantService.search_text" [ngModelOptions]="{ standalone: true }"
+                            (keyup)="restaurantService.searchKey(restaurantService.search_text)">
+                        <a class="btn theme-btn mt-0 rounded-2" href="javascript:void(0)" role="button"
+                            (click)="restaurantService.searchKey(restaurantService.search_text)">Search</a>
+                    </div>
+                </form>
+                @if(restaurantService.searchResult && !restaurantService.searchResultEmpty){
+                <div class="typeahead-menu">
+                    @for (menuItem of restaurantService.searchData ; track menuItem) {
+                    <div class="ProfileCard u-cf">
+                        <div class="ProfileCard-details">
+                            <div class="ProfileCard-realName">
+                                <a class="realname" [routerLink]="['/order/restaurant-listing']"
+                                    (click)="restaurantService.removeFix()">{{menuItem.name }}</a>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+                }
+                @if(restaurantService.searchResultEmpty){
+                <div class="typeahead-menu" (clickOutside)="restaurantService.clickOutside()">
+                    <div class="ProfileCard u-cf">
+                        <div class="ProfileCard-details">
+                            <div class="ProfileCard-realName">
+                                <a class="realname">Opps!! There are no result found.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+                <div class="related-search">
+                    Related Search: <a href="javascript:void(0)">Pizza,</a>
+                    <a href="javascript:void(0)">Pasta,</a>
+                    <a href="javascript:void(0)">Maxican</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3 d-lg-block d-none text-end">
+            <img src="assets/images/2.png" class="img-fluid" alt="">
+        </div>
+    </div>
+</div>

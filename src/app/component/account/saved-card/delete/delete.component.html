@@ -1,0 +1,13 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="remove-card">delete Card</h1>
+        <button type="button" class="btn-close" (click)="modal.dismissAll()"></button>
+    </div>
+    <div class="modal-body">
+        <p>Are you Sure, Your Card is Delete</p>
+    </div>
+    <div class="modal-footer">
+        <a [routerLink]="['/account/saved-card']" class="btn gray-btn mt-0" (click)="modal.dismissAll()">CANCEL</a>
+        <a [routerLink]="['/account/change-profile']" class="btn theme-outline mt-0" (click)="modal.dismissAll()">Delete</a>
+    </div>
+</div>

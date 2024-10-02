@@ -1,0 +1,72 @@
+<ul class="nav nav-tabs tab-style3" ngbNav #nav="ngbNav" [(activeId)]="active">
+    <li [ngbNavItem]="1" class="nav-item">
+        <button class="nav-link " ngbNavLink>Order Status</button>
+        <ng-template ngbNavContent>
+            <div class="order-status-content">
+                <div class="driver-details">
+                    <h4>Drivers Information</h4>
+                    <div class="driver-details-box">
+                        <div class="driver-image">
+                            <img class="img-fluid img" src="assets/images/icons/p1.png" alt="p1">
+                        </div>
+                        <div class="driver-content">
+                            <div class="driver-info">
+                                <h6>Driver Name :</h6>
+                                <h5>Jose Mike</h5>
+                            </div>
+
+                            <div class="driver-info">
+                                <h6>Estimated Delivery Time :</h6>
+                                <h5>30 mins</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="shipping-details">
+                    <h4>Shipping Details</h4>
+                    <ul class="delivery-list">
+                        <li>
+                            <div class="order-address">
+                                <img class="img-fluid place-icon" src="assets/images/svg/driver.svg" alt="delivery">
+                                <div>
+                                    <h5>Driver position </h5>
+                                    <h6 class="delivery-place">Blackville</h6>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="order-address">
+                                <img class="img-fluid place-icon" src="assets/images/svg/placed.svg" alt="restaurant">
+                                <div>
+                                    <h5>Restaurant Address</h5>
+                                    <h6 class="delivery-place">Starbucks</h6>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="order-address">
+                                <img class="img-fluid place-icon" src="assets/images/svg/user-map.svg" alt="delivery">
+                                <div>
+                                    <h5>Delivery Address</h5>
+                                    <h6 class="delivery-place">Blackville</h6>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </ng-template>
+    </li>
+    <li [ngbNavItem]="2" class="nav-item">
+        <button class="nav-link" ngbNavLink>Order Details</button>
+        <ng-template ngbNavContent>
+            <div class="order-details-content">
+                <div class="layout-sec">
+                    <app-order-cart-items [title]="false" [buttonTitle]="'CheckOut'"></app-order-cart-items>
+                </div>
+            </div>
+        </ng-template>
+    </li>
+</ul>
+<div [ngbNavOutlet]="nav"></div>

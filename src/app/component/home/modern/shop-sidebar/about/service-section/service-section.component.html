@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row g-3">
+        @for (item of data; track item) {
+        <div class="col-xl-3 col-lg-6 col-sm-6 col-12">
+            <div class="service-box">
+                <div class="service-img">
+                    <img class="img-fluid icon" [src]="item.Image_url" alt="routing">
+                </div>
+                <h5 class="service-name">{{item.Service_Name}}</h5>
+                <p class="service-details">
+                    {{item.Service_Details}}
+                </p>
+                <div class="dot"></div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="row g-4">
+    @for (item of data; track item) {
+        <div class="col-xl-3 col-lg-4 col-md-6 col-12">
+            <div class="coupon-box">
+                <a href="javascript:void(0)" class="coupon-name">
+                    <img class="img-fluid img" [src]="item.image_url" alt="c1">
+                    <div class="bank-name d-flex align-items-center justify-content-between flex-wrap w-100">
+                        <div>
+                            <h5 class="fw-semibold dark-text">{{item.title}}</h5>
+                            <h6 class="content-color">{{item.sub_title}}</h6>
+                        </div>
+                    </div>
+                </a>
+                <div class="coupon-content bank-offer-content">
+                    <p class="p-0">{{item.description}}
+                    </p>
+                </div>
+                <img class="img-fluid coupon-right" src="assets/images/svg/coupon-right.svg" alt="border-bottom">
+
+            </div>
+        </div>
+    }
+</div>

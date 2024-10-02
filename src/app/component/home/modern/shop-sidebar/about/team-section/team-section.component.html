@@ -1,0 +1,38 @@
+<div class="container">
+    <app-title [animation]="true" [title]="'Our Team'" [class]="'animated-title'" [type]="'basic'"
+        [subTitle]="'Our team is committed to delivering innovative solutions that meet the needs of our clients and users.'"></app-title>
+    <div class="row g-3">
+        @for (item of data; track item) {
+        <div class="col-xl-3 col-lg-4 col-sm-6 col-12">
+            <div class="team-box">
+                <div class="member-image">
+                    <img class="img-fluid img" [src]="item.Image_Url" alt="person1">
+                </div>
+                <div class="member-details">
+                    <h5 class="member-name fw-semibold dark-text">
+                        {{item.Member_Name}}
+                    </h5>
+                    <h6 class="fw-normal content-color">{{item.post}}</h6>
+                    <ul class="social-icon">
+                        <li>
+                            <a href="https://www.facebook.com/login/">
+                                <i class="ri-facebook-fill icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/i/flow/login">
+                                <i class="ri-twitter-fill icon"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com/accounts/login/">
+                                <i class="ri-instagram-fill icon"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,14 @@
+<div class="theme-btns">
+    <button type="button" class="btntheme mode-change-button" (click)="changeMode()">
+        <i class="ri-moon-line" [ngClass]="!dark ?'':'ri-sun-line icon mode-icon'"></i>
+        @if(!dark){
+        <!-- <span class="text-value">Dark</span> -->
+        } @else {
+        <!-- <span class="text-value">Light</span> -->
+        }
+    </button>
+    <!-- <button type="button" class="btntheme rtlBtnEl" (click)="changeLayoutType(tabData)">
+        <i class="ri-repeat-line icon"></i>
+        <span class="text-value">{{tabData.toUpperCase()}}</span>
+    </button> -->
+</div>

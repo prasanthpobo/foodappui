@@ -1,0 +1,82 @@
+
+
+<div class="skeleton-loader overflow-x-hidden" [style.display]="skeletonService.isSkeleton ? 'none' : 'block'">
+    <app-skeleton-modern></app-skeleton-modern>
+</div>
+<div class="shop-sidebar-demo" (clickOutside)="navService.isOpen">
+    <a class="sidebar-overlay" [class.show]="navService.isOpen"></a>
+    <div class="shop-sidebar" [class.show]="navService.isOpen">
+        <app-shop-sidebar></app-shop-sidebar>
+    </div>
+    <div class="shop-body">
+        <!-- top banner section -->
+        @if(modernData && modernData.topSection){
+        <div class="top-section"
+            style="background-size: cover; background-position: center; background-repeat: no-repeat; display: block;"
+            [ngStyle]="{'background-image': 'url(' +  'assets/images/home-bg.png'  + ')'}">
+            <div class="banner-content">
+                <div>
+                    <h4>{{modernData.topSection.title}}</h4>
+                    <h2 class="my-sm-3 my-2">{{modernData.topSection.sub_title}}</h2>
+                    <a href="javascript:void(0)" class="btn theme-btn">{{modernData.topSection.button_text}}</a>
+                </div>
+            </div>
+        </div>
+        }
+        <!-- top banner section -->
+        <!-- categories section starts -->
+        @if(modernData && modernData.category){
+        <div class="categories-section section-md-t-space nav-true">
+            <div>
+                <app-title [type]="'basic'" [title]="'Categories'"
+                    [subTitle]="'Browse out top categories here to discover different food cuision.'"
+                    [class]="'title-sm mt-0'"></app-title>
+                <div class="theme-arrow">
+                    <div class="swiper categories-slider-2 categories-style category-inline">
+                        <div class="swiper-wrapper">
+                            <app-categories-section [type]="'basic'"
+                                [id]="modernData.category"></app-categories-section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+        <!-- categories section starts -->
+        <!-- popular restaurant section starts -->
+        @if (modernData && modernData.popular_restaurants) {
+        <div class="popular-restaurant section-md-t-space ratio3_2 nav-true">
+            <img class="img-fluid item-5" src="assets/images/svg/item5.svg" alt="item-5">
+            <app-title [type]="'basic'" [title]="'Popular Restaurants'" [subTitle]="'Find nearby popular Restaurants.'"
+                [class]="'title-sm mt-0'"></app-title>
+            <app-product-box [type]="'simple'" [id]="modernData.popular_restaurants"></app-product-box>
+        </div>
+        }
+        <!-- popular restaurant section end -->
+        <!-- brand section starts -->
+        @if (modernData && modernData.brand) {
+        <div class="brand-section section-md-t-space brand-style2">
+            <app-title [type]="'basic'" [title]="'Brand For You'"
+                [subTitle]="'Browse out top brands here to discover different food cuision.'"
+                [class]="' title-sm mt-0'"></app-title>
+            <div class="position-relative">
+                <div class="swiper brands-logo">
+                    <div class="swiper-wrapper">
+                        <app-brand-for-you [id]="modernData.brand"></app-brand-for-you>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+        <!-- brand section starts -->
+        <!-- nearby restaurant section starts -->
+        @if (modernData && modernData.nearby_restaurants) {
+        <div class="popular-restaurant section-md-t-space section-md-b-space ratio3_2">
+            <app-title [type]="'basic'" [title]="'Nearby Restaurants'" [subTitle]="'Find nearby popular Restaurants.'"
+                [class]="'title-sm'"></app-title>
+            <app-product-box [type]="'simple'" [id]="modernData.nearby_restaurants"></app-product-box>
+        </div>
+        }
+        <!-- nearby restaurant section end -->
+    </div>
+</div>

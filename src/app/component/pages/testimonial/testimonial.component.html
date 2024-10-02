@@ -1,0 +1,60 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+<!-- testimonial section starts -->
+<section class="section-b-space testimonial-section">
+  <div class="container">
+    <div class="faq-title">
+      <h2>Our Client Feedback</h2>
+    </div>
+    <div class="swiper testimonial mb-xl-5 mb-sm-4 mb-3">
+      <div class="swiper-wrapper">
+        <owl-carousel-o [options]="customOptions">
+          @for (item of testimonial; track item) {
+          <ng-template carouselSlide>
+            <div class="swiper-slide">
+              <div class="testimonial-box">
+                <img class="img-fluid comma-icon" src="assets/images/icons/commas.png" alt="commas">
+                <div class="testimonial-content">
+                  <p>
+                    {{item.description}}
+                  </p>
+                  <div class="testi-bottom">
+                    <img class="img-fluid img" [src]="item.image_url" alt="p1">
+                    <h5 class="fw-semibold dark-text mt-2">{{item.name}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+    </div>
+    <div class="swiper testimonial dir-rtl">
+      <div class="swiper-wrapper">
+        <owl-carousel-o [options]="customOptionsRtl">
+          @for (item of testimonial; track item) {
+          <ng-template carouselSlide>
+            <div class="swiper-slide">
+              <div class="testimonial-box">
+                <img class="img-fluid comma-icon" src="assets/images/icons/commas.png" alt="commas">
+                <div class="testimonial-content">
+                  <p>
+                    {{item.description}}
+                  </p>
+                  <div class="testi-bottom">
+                    <img class="img-fluid img" [src]="item.image_url" alt="p1">
+                    <h5 class="fw-semibold dark-text mt-2">{{item.name}}</h5>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+          }
+        </owl-carousel-o>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- testimonial section end -->

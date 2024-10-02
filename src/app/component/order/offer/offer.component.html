@@ -1,0 +1,23 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+
+<!-- coupon section starts -->
+@if(offer){
+<section>
+    <app-available-coupons [data]="offer.AvailableCoupons"></app-available-coupons>
+</section>
+}
+<!-- coupon section end -->
+
+<!-- bank offer section end -->
+@if(offer){
+<section class="product-section section-b-space">
+    <div class="container">
+        <app-title [type]="'basic'" [title]="'Bank Offers'" [class]="'animated-title'" [animation]="true"
+            [subTitle]="'There are many variations of Offer Coupes'"></app-title>
+        <app-bank-offers [data]="offer.BankOffers"></app-bank-offers>
+    </div>
+</section>
+}
+<!-- bank offer section end -->

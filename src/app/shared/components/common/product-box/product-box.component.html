@@ -1,0 +1,11 @@
+@if(type === 'basic'){
+<app-product-box-one [data]="productData" [class]="class"></app-product-box-one>
+}@else if(type === 'simple'){
+<app-product-box-two [data]="productData" [class]="class"></app-product-box-two>
+} @else if(type === 'classic'){
+<app-product-box-three [data]="productData" [class]="class"></app-product-box-three>
+} @else if(type === 'standard'){
+<app-product-box-four [data]="productData" [class]="class"></app-product-box-four>
+} @else if (type === 'premium') {
+<app-product-box-five [data]="productData" [class]="class"></app-product-box-five>
+}

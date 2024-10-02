@@ -1,0 +1,54 @@
+ <!-- page head section end -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+ <!-- profile section starts -->
+ <section class="profile-section section-b-space">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-lg-3">
+               <app-profile-section></app-profile-section>
+            </div>
+            <div class="col-lg-9">
+                <div class="my-order-content">
+                    <app-title [type]="'simple'" [title]="'My Order'" [animation]="true"></app-title>
+                    <ul class="order-box-list">
+                        @for (item of order; track item) {
+                        <li>
+                            <div class="order-box">
+                                <div class="order-box-content">
+                                    <div class="brand-icon">
+                                        <img class="img-fluid icon" [src]="item.image_url" alt="brand3">
+                                    </div>
+                                    <div class="order-details">
+                                        <div class="d-flex align-items-center justify-content-between w-100">
+                                            <h5 class="brand-name dark-text fw-medium">
+                                                {{item.brand}}
+                                            </h5>
+                                            <h6 class="fw-medium content-color text-end">
+                                                {{item.time}}
+                                            </h6>
+                                        </div>
+                                        <h6 class="fw-medium dark-text">
+                                            <span class="fw-normal content-color">Transaction Id :
+                                            </span>
+                                            {{item.transaction_id}}
+                                        </h6>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-center justify-content-between mt-sm-3 mt-2">
+                                    <h6 class="fw-medium dark-text">
+                                        <span class="fw-normal content-color">Total Amount :</span>
+                                        $ {{item.totalPrice}}
+                                    </h6>
+                                    <a (click)="details(item.transaction_id)" class="btn theme-outline details-btn">Details</a>
+                                </div>
+                            </div>
+                        </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- profile section end -->

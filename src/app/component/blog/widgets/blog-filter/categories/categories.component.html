@@ -1,0 +1,14 @@
+<ul class="category-list custom-padding custom-height scroll-bar">
+    @for (item of data; track item) {
+    <li>
+        <a [routerLink]="['/order/restaurant-listing']">
+            <div class="form-check ps-0 m-0 category-list-box">
+                <label class="form-check-label" for="fruit">
+                    <span class="name">{{item.name}}</span>
+                    <span class="number">({{item.value}})</span>
+                </label>
+            </div>
+        </a>
+    </li>
+    }
+</ul>

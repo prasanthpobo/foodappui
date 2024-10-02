@@ -1,0 +1,11 @@
+<div class="photos-section ratio_landscape">
+    <ul class="photos-list" gallerize>
+        @for (item of photos; track item) {
+        <li >
+            <a class="back-img"> 
+                <img class="img-fluid" [src]="item.image_url" alt="{{item.alt}}">
+            </a>
+        </li>
+        }
+    </ul>
+</div>

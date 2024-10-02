@@ -1,0 +1,353 @@
+<header>
+    <div class="custom-container">
+        <nav class="navbar navbar-expand-lg p-0">
+            <button class="navbar-toggler" type="button">
+                <span class="navbar-toggler-icon">
+                    <i class="ri-menu-line"></i>
+                </span>
+            </button>
+            <a href="javascript:void(0)">
+                <img class="img-fluid logo" src="assets/images/food-point.png" alt="logo">
+            </a>
+            <a  href="vascript:void(0)" data-bs-toggle="modal" data-bs-target="#location"
+                class="btn btn-sm theme-btn location-btn mt-0 ms-3 d-flex align-content-center gap-1 rounded-2">
+                <i class="ri-map-pin-line"></i> Location
+            </a>
+            <div class="nav-option order-md-2">
+                <div class="dropdown-button">
+                    <div class="cart-button">
+                        <span>5</span>
+                        <i class="ri-shopping-cart-line text-white cart-bag"></i>
+                    </div>
+                </div>
+                <div class="profile-part dropdown-button order-md-2">
+                    <img class="img-fluid profile-pic" src="assets/images/svg/user-map.svg" alt="profile">
+                    <!-- <div>
+                        <h6 class="fw-normal">Hi, Mark Jecno</h6>
+                        <h5 class="fw-medium">My Account</h5>
+                    </div> -->
+                </div>
+            </div>
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasSkeleton">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasSkeletonLabel">
+                        Menu
+                    </h5>
+                    <button class="navbar-toggler btn-close" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#offcanvasSkeleton" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav justify-content-center flex-grow-1">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Order</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Blog</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="javascript:void(0)" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">Pages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="javascript:void(0)">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+<section class="home4 section-b-space bg-size"
+    [ngStyle]="{'background-image': 'url(' + 'assets/images/home-bg3.jpg' + ')'}">
+    <img src="assets/images/home-bg3.jpg" class="img-fluid bg-img" alt="" style="display: none;">
+    <div class="custom-container">
+        <div class="row">
+            <div class="col-3 d-lg-block d-none">
+                <img src="assets/images/1.png" class="img-fluid" alt="">
+            </div>
+            <div class="col-lg-6 col-12">
+                <div class="home-content placeholder-glow">
+                    <h1 class="placeholder col-6"></h1>
+                    <p class="placeholder col-8"></p>
+                    <form>
+                        <div>
+                            <span class="placeholder col-7 form-auth"></span>
+                            <a class="placeholder col-sm-2 col-4 home-btn"></a>
+                        </div>
+                    </form>
+                    <span class="placeholder col-6 related-search"></span>
+                </div>
+            </div>
+            <div class="col-3 d-lg-block d-none text-end">
+                <img src="assets/images/2.png" class="img-fluid" alt="">
+            </div>
+        </div>
+    </div>
+</section>
+<div class="quote-panel">
+    <ul class="marquee">
+        <li>
+            <span class="space-family">Fresh Ingredients</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Handmade Mozarella</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Locally sourced vegetables</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Hand-picked herbs</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Handcrafted desserts</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Locally sourced vegetables</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Artisanal bread</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Homemade pasta</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Fresh Ingredients</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Handmade Mozarella</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Locally sourced vegetables</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Hand-picked herbs</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Handcrafted desserts</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Locally sourced vegetables</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Artisanal bread</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+        <li>
+            <span class="space-family">Homemade pasta</span>
+            <img src="assets/images/svg/marquee.svg" alt="star" class="img-fluid">
+        </li>
+    </ul>
+</div>
+<section class="categories-section category-outer placeholder-glow">
+    <div class="container">
+        <div class="title title-border">
+            <h2 class="placeholder col-md-2 col-5"></h2>
+            <p class="placeholder col-5 w-50"></p>
+        </div>
+        <div class="theme-arrow">
+            <div class="swiper categories-slider categories-style">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                    <div class="swiper-slide">
+                        <a href="javascript:void(0)" class="food-categories">
+                            <span class="categories-img"></span>
+                            <h4 class="placeholder col-10"></h4>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section-b-space deal-section placeholder-glow">
+    <div class="container">
+        <div class="title title-border">
+            <h2 class="placeholder col-md-2 col-5"></h2>
+            <p class="placeholder col-5 w-50"></p>
+        </div>
+        <div class="row gy-xxl-0 gy-5 row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 custom-sm-100">
+            <div class="col">
+                <div class="deal-box">
+                    <div class="deal-content">
+                        <div class="brand-logo"></div>
+                        <h3 class="placeholder col-8"></h3>
+                        <h5 class="placeholder col-10"></h5>
+                        <h6 class="placeholder col-8"></h6>
+                        <span class="placeholder col-12 coupon-code"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="deal-box">
+                    <div class="deal-content">
+                        <div class="brand-logo"></div>
+                        <h3 class="placeholder col-8"></h3>
+                        <h5 class="placeholder col-10"></h5>
+                        <h6 class="placeholder col-8"></h6>
+                        <span class="placeholder col-12 coupon-code"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="deal-box">
+                    <div class="deal-content">
+                        <div class="brand-logo"></div>
+                        <h3 class="placeholder col-8"></h3>
+                        <h5 class="placeholder col-10"></h5>
+                        <h6 class="placeholder col-8"></h6>
+                        <span class="placeholder col-12 coupon-code"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="deal-box">
+                    <div class="deal-content">
+                        <div class="brand-logo"></div>
+                        <h3 class="placeholder col-8"></h3>
+                        <h5 class="placeholder col-10"></h5>
+                        <h6 class="placeholder col-8"></h6>
+                        <span class="placeholder col-12 coupon-code"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="deal-box">
+                    <div class="deal-content">
+                        <div class="brand-logo"></div>
+                        <h3 class="placeholder col-8"></h3>
+                        <h5 class="placeholder col-10"></h5>
+                        <h6 class="placeholder col-8"></h6>
+                        <span class="placeholder col-12 coupon-code"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+<!--  account section starts -->
+<section class="account-section section-b-space pt-0">
+    <div class="container">
+        <div class="layout-sec">
+            <div class="row g-lg-4 g-4">
+                <app-order></app-order>
+                <div class="col-lg-8">
+                    @if (self) {
+                    <app-common-address [deliver]="true" [data]="self.address" [type]="'simple'"
+                        [title]="'Select Saved Address'"
+                        [subTitle]="'You’ve add some address before, You can select one of below.'" class="mt-0"></app-common-address>
+                    }
+                </div>
+                <div class="col-lg-4">
+                    <app-order-cart-items [title]="false" [showPayButton]="false" [buttonURL]="'/order/payment'" [buttonTitle]="'CheckOut'"></app-order-cart-items>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- account section end -->

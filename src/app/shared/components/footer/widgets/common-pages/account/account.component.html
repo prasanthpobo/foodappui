@@ -1,0 +1,12 @@
+@if(footer){
+<h5 class="footer-title">{{footer.account.title}}</h5>
+<ul class="content">
+    @for (item of footer.account.page; track item) {
+    <li>
+        <a [routerLink]="item.link">
+            <h6>{{item.title}}</h6>
+        </a>
+    </li>
+    }
+</ul>
+}

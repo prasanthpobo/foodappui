@@ -1,0 +1,40 @@
+<div class="cart-button">
+    <span>{{count}}</span>
+    @if (routePath && routePath.includes('/home/modern') || routePath && routePath.includes('/home/minimal')) {
+    <i class="ri-shopping-cart-line cart-bag"></i>
+    } @else{
+    <i class="ri-shopping-cart-line text-white cart-bag"></i>
+    }
+</div>
+<div class="onhover-box">
+    <ul class="cart-list">
+        @for (item of cartItem; track item) {
+        <li class="product-box-contain">
+            <div class="drop-cart">
+                <a href="javascript:void(0);" class="drop-image">
+                    <img [src]="item.image_url" class="blur-up lazyloaded" alt="">
+                </a>
+                <div class="drop-contain">
+                    <a href="javascript:void(0);">
+                        <h5>{{item.name}}</h5>
+                    </a>
+                    <h6><span>{{item.value}} x </span> ₹ {{item.price}}</h6>
+                    <button class="close-button close_button">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </li>
+        }
+    </ul>
+
+    <div class="price-box">
+        <h5>Total :</h5>
+        <h4 class="theme-color fw-semibold">₹ {{Total}}</h4>
+    </div>
+
+    <div class="button-group">
+        <a [routerLink]="['/order/checkout']" class="btn btn-sm theme-btn w-100 d-block rounded-2">View
+            Cart</a>
+    </div>
+</div>

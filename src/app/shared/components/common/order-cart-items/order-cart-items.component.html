@@ -1,0 +1,63 @@
+<div class="order-summery-section sticky-top">
+    <div class="checkout-detail">
+        @if(cartItem){
+        @if(!showBillings){
+        <h3 class="fw-semibold dark-text checkout-title">{{CartHeadings}}</h3>
+        }
+        <div class="order-summery-section mt-0">
+            <div class="checkout-detail p-0">
+                @if(!showBillings){
+                <ul>
+                    @for (item of cartItem; track item) {
+                    <li>
+                        <div class="horizontal-product-box">
+                            <div class="product-content">
+                                <div class="d-flex align-items-center justify-content-between">
+                                    <h5>{{item.name}}</h5>
+                                    <h6 class="product-price">{{item.value * item.price}}</h6>
+                                </div>
+                                <h6 class="ingredients-text">{{item.value}} X ₹ {{item.price}}</h6>
+                                <!-- <div class="d-flex align-items-center justify-content-between mt-md-2 mt-1 gap-1">
+                                    <h6 class="place">{{item.value}} X ₹{{item.price}}</h6>
+                                     <div class="plus-minus">
+                                        <i class="ri-subtract-line sub" (click)="increaseDecrease(item.id ,-1)"></i>
+                                        <input type="number" value="{{item.value}}">
+                                        <i class="ri-add-line add" (click)="increaseDecrease(item.id, 1)"></i>
+                                    </div> 
+                                </div> -->
+                            </div>
+                        </div>
+                    </li>
+                    }
+                </ul>
+                }
+                @if(showBillings){
+                <h5 class="bill-details-title fw-semibold dark-text">Bill Details</h5>
+                <div class="sub-total">
+                    <h6 class="content-color fw-normal">Sub Total</h6>
+                    <h6 class="fw-semibold">₹ {{sub_total}}</h6>
+                </div>
+                <div class="sub-total">
+                    <h6 class="content-color fw-normal">Delivery Charge (2 kms)</h6>
+                    <h6 class="fw-semibold success-color">Free</h6>
+                </div>
+                <div class="sub-total">
+                    <h6 class="content-color fw-normal">Discount (10%)</h6>
+                    <h6 class="fw-semibold">₹ {{discount_price}}</h6>
+                </div>
+                <div class="grand-total">
+                    <h6 class="fw-semibold dark-text">To Pay</h6>
+                    <h6 class="fw-semibold amount">₹ {{to_pay}}</h6>
+                </div>
+                }
+
+            </div>
+
+        </div>
+        }
+        @if(showBillings && showPayButton){
+        <a routerLink={{buttonURL}} class="btn theme-btn restaurant-btn w-100 rounded-2">{{buttonTitle}}</a>
+        <img class="dots-design" src="assets/images/svg/dots-design.svg" alt="dots" />
+        }
+    </div>
+</div>

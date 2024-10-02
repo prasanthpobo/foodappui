@@ -1,0 +1,56 @@
+<div class="left-box wow fadeInUp {{boxClass}}">
+    <div class="shop-left-sidebar {{shopClass}}">
+        <div class="search-box">
+            <div class="form-input position-relative">
+                <input type="search" class="form-control search" id="search" placeholder="Search">
+                <i class="ri-search-line search-icon"></i>
+            </div>
+        </div>
+        <div ngbAccordion class="accordion sidebar-accordion" [closeOthers]="false">
+            <div class="accordion-item" ngbAccordionItem [collapsed]="false">
+                <h2 ngbAccordionHeader class="accordion-header">
+                    <button ngbAccordionButton class="accordion-button">Categories</button>
+                </h2>
+                <div ngbAccordionCollapse class="accordion-collapse collapse">
+                    <div ngbAccordionBody class="accordion-body">
+                        <ng-template>
+                            @if(blog){
+                            <app-categories [data]="blog.categories"></app-categories>
+                            }
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" ngbAccordionItem [collapsed]="false">
+                <h2 ngbAccordionHeader class="accordion-header">
+                    <button ngbAccordionButton class="accordion-button">
+                        <span>Recent Post</span>
+                    </button>
+                </h2>
+                <div ngbAccordionCollapse class="accordion-collapse collapse">
+                    <div ngbAccordionBody class="accordion-body">
+                        <ng-template>
+                            @if(blog){
+                            <app-recent-post [data]="blog.recentPost"></app-recent-post>
+                            }
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item" ngbAccordionItem [collapsed]="false">
+                <h2 ngbAccordionHeader class="accordion-header">
+                    <button ngbAccordionButton class="accordion-button">Tags</button>
+                </h2>
+                <div ngbAccordionCollapse class="accordion-collapse collapse">
+                    <div ngbAccordionBody class="accordion-body">
+                        <ng-template>
+                            @if(blog){
+                            <app-tags [data]="blog.tags"></app-tags>
+                            }
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

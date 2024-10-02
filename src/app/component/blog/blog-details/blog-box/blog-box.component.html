@@ -1,0 +1,30 @@
+<div class="img-box bg-size" [ngStyle]="{'background-image': 'url(' +  data.image_url  + ')'}">
+    <img class="bg-img w-100" [src]="data.image_url" alt="blog" style="display: none;">
+</div>
+<div class="content-box">
+    <div class="d-flex align-items-center justify-content-between flex-wrap">
+        <h5 class="blog-title">{{data.title}}
+        </h5>
+        <span class="content-color">{{data.date}}</span>
+    </div>
+    @for (data of data.content; track data) {
+    <p>
+        {{data.text}}
+    </p>
+    }   
+    <div class="share-box">
+        <div class="sender-box">
+            <div class="avatar-img">
+                <img class="img-fluid img" src="assets/images/icons/p1.png" alt="post">
+            </div>
+            <div class="sender-details">
+                <h5>by John wiki on</h5>
+            </div>
+        </div>
+        <div class="action-box d-flex align-items-center gap-3">
+            <span class="like d-flex gap-1"> <i class="ri-thumb-up-line like-btn"></i>125</span>
+            <span class="like d-flex gap-1"> <i class="ri-thumb-down-line like-btn"></i>525</span>
+            <a href="javascript:void(0)" class="btn btn-sm theme-btn">Reply</a>
+        </div>
+    </div>
+</div>

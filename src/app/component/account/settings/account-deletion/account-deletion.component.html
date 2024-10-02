@@ -1,0 +1,18 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">
+            Account Deletion Request
+        </h1>
+        <button type="button" class="btn-close" (click)="modal.dismissAll()"></button>
+    </div>
+    <div class="modal-body">
+        <p>
+            Please explain your reason for Food Point account before you go. We can
+            get better with this knowledge.
+        </p>
+        <textarea name="delete" class="w-100 mt-2 form-control" id="reason" rows="3"></textarea>
+    </div>
+    <div class="modal-footer">
+        <a [routerLink]="['/home/classic']" class="btn theme-btn mt-0" (click)="modal.dismissAll()">delete Account</a>
+    </div>
+</div>

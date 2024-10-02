@@ -1,0 +1,38 @@
+@if (type === 'basic') {
+<owl-carousel-o [options]="customOptions">
+    @for (item of dealData; track item) {
+    <ng-template carouselSlide>
+        <div class="swiper-slide" style="margin-right: 12px;">
+            <div class="banner-part" [routerLink]="['/order/offer']">
+                <a>
+                    <img class="img-fluid banner-img" [src]="item.image_url" alt="banner">
+                </a>
+            </div>
+        </div>
+    </ng-template>
+    }
+</owl-carousel-o>
+}
+
+@if (type === 'simple') {
+<div class="row gy-xxl-0 gy-5 row-cols-xxl-5 row-cols-lg-4 row-cols-md-3 row-cols-2 custom-sm-100">
+    @for (item of homeFiveTodaysDeal; track item) {
+    <div class="col">
+        <div class="deal-box">
+            <div class="deal-content">
+                <div class="brand-logo">
+                    <img [src]="item.image_url" class="img-fluid" alt="">
+                </div>
+                <h3>{{item.offer}}</h3>
+
+                <h5>On your next purchase</h5>
+                <h6>Your coupon code: </h6>
+                <div class="coupon-code">
+                    <span>{{item.coupon_code}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
+}

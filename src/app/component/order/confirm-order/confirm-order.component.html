@@ -1,0 +1,29 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+
+  <!--  account section starts -->
+  <section class="account-section section-b-space pt-0">
+    <div class="container">
+        <div class="layout-sec">
+            <div class="row g-lg-4 g-4">
+                <app-order></app-order>
+                <div class="col-lg-8">
+                    <div class="account-part confirm-part mt-0">
+                        <img class="img-fluid account-img w-25" src="assets/images/gif/confirm.gif" alt="confirm">
+                        <h3>Your order has been successfully placed</h3>
+                        <p>Sit and relax while your order is being worked on. It’ll take 5 min before you get it.
+                        </p>
+                        <div class="account-btn d-flex justify-content-center gap-2">
+                            <a [routerLink]="['/order/confirm-order']" class="btn theme-btn mt-0 ">TRACK ORDER</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <app-order-cart-items [title]="false"  [showPayButton]="false" [buttonTitle]="'Back to Home'"></app-order-cart-items>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- account section end -->

@@ -1,0 +1,55 @@
+<div class="background-effect">
+    <div class="background-effect">
+        <div class="main-circle">
+            <div class="main-circle circle-1">
+                <div class="main-circle circle-2">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container text-center">
+    <h1>FOOD POINT</h1>
+    <h2>Discover restaurants that deliver near you....</h2>
+    <div class="search-section">
+        <form class="auth-form search-head">
+            <div class="form-group">
+                <div class="form-input mb-0">
+                    <input type="text" class="form-control search" [(ngModel)]="restaurantService.search_text"
+                        [ngModelOptions]="{ standalone: true }" placeholder="Search for Restaurant"
+                        (keyup)="restaurantService.searchKey(restaurantService.search_text)">
+                    <i class="ri-search-line search-icon"></i>
+                </div>
+
+            </div>
+        </form>
+        <a class="btn theme-btn mt-0" href="javascript:void(0);" role="button"
+            (click)="restaurantService.searchKey(restaurantService.search_text)">Search</a>
+    </div>
+    @if(restaurantService.searchResult && !restaurantService.searchResultEmpty){
+    <div class="typeahead-menu">
+        @for (menuItem of restaurantService.searchData ; track menuItem) {
+        <div class="ProfileCard u-cf">
+            <div class="ProfileCard-details">
+                <div class="ProfileCard-realName">
+                    <a class="realname" [routerLink]="['/order/restaurant-listing']"
+                        (click)="restaurantService.removeFix()">{{menuItem.name }}</a>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+    }
+    @if(restaurantService.searchResultEmpty){
+    <div class="typeahead-menu" (clickOutside)="restaurantService.clickOutside()">
+        <div class="ProfileCard u-cf">
+            <div class="ProfileCard-details">
+                <div class="ProfileCard-realName">
+                    <a class="realname">Opps!! There are no result found.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+    <app-service [type]="'basic'"></app-service>
+</div>

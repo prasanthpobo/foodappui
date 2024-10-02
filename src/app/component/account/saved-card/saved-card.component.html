@@ -1,0 +1,71 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+
+<!-- card section starts -->
+<section class="profile-section section-b-space">
+    <div class="container">
+        <div class="row g-3">
+            <div class="col-lg-3">
+                <app-profile-section></app-profile-section>
+            </div>
+            <div class="col-lg-9">
+                <div class="cards-content">
+                    <app-title [type]="'simple'" [title]="'Saved Card'" [animation]="true"></app-title>
+                    <div class="row g-4">
+                        @for (item of savedCard; track item) {
+                        <div class="col-xl-4 col-lg-6 col-sm-6 col-12">
+                            <div class="debit-card {{item.class}}">
+                                <div class="card-details">
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <h5 class="card-name fw-semibold">{{item.title}}</h5>
+                                        <img class="img-fluid network" src="assets/images/svg/network.svg"
+                                            alt="network">
+                                    </div>
+                                    <img class="img-fluid chip" src="assets/images/svg/Chip.svg" alt="chip">
+                                    <div class="ac-details">
+                                        <h6>AC No.</h6>
+                                        <h3>{{item.account_number}}</h3>
+                                    </div>
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div class="d-flex gap-2">
+                                            <h6>Exp.</h6>
+                                            <h5>{{item.expire}}</h5>
+                                        </div>
+                                        <div class="d-flex gap-2">
+                                            <h6>CVV</h6>
+                                            <h5>***</h5>
+                                        </div>
+                                    </div>
+                                    <div class="user-name">
+                                        <h5>{{item.user_name}}</h5>
+                                    </div>
+                                </div>
+                                <div class="card-hover">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <a (click)="Edit(item.id)" class="text-white">
+                                            <i class="ri-edit-2-fill edit-icon"></i> Edit</a>
+                                        <a (click)="Delete()" class="text-white">
+                                            <i class="ri-delete-bin-fill"></i> Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        <div class="col-xl-4 col-lg-6 col-sm-6 col-12">
+                            <div class="add-card">
+                                <div (click)="addCard()" class="card-details">
+                                    <div>
+                                        <i class="ri-add-line add-icon"></i>
+                                        <h5 class="fw-normal dark-text">Add New Card</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- profile section end -->

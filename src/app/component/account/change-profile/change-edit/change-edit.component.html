@@ -1,0 +1,37 @@
+<div class="modal-content">
+    <form [formGroup]="myGroup">
+        <div class="modal-header">
+            <h1 class="modal-title" id="exampleModalToggleLabel">{{data.label}}</h1>
+        </div>
+        @if(data.label === 'Password'){
+        <div class="modal-body" formGroupName="password">
+            <div class="form-group">
+                <label for="inputcurrentPassword" class="form-label">
+                    Current Password</label>
+                <input type="password" class="form-control" placeholder="Enter your current password" formControlName="current_password">
+            </div>
+            <div class="form-group mt-2">
+                <label for="inputnewPassword" class="form-label">
+                    New Password</label>
+                <input type="password" class="form-control" placeholder="Enter your new password" formControlName="new_password">
+            </div>
+            <div class="form-group mt-2">
+                <label for="inputcofirmPassword" class="form-label">Confirm Password</label>
+                <input type="password" class="form-control" placeholder="Enter your confirm password"
+                    formControlName="confirm_password">
+            </div>
+        </div>
+        } @else{
+        <div class="modal-body" formGroupName="form">
+            <div class="form-group">
+                <label for="inputName" class="form-label">{{data.label}}</label>
+                <input type="text" class="form-control" formControlName="value" placeholder="Enter {{data.label}}">
+            </div>
+        </div>
+        }
+        <div class="modal-footer">
+            <button [routerLink]="['/account/change-profile']" class="btn theme-btn" type="submit"
+                [disabled]="!myGroup.valid">Save</button>
+        </div>
+    </form>
+</div>

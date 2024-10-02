@@ -1,0 +1,54 @@
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+
+<!-- popular restaurant section starts -->
+<section class="restaurant-list section-b-space">
+    <div class="container">
+        <div class="row g-4 ratio2_3">
+            @for (item of wishList; track item;let index = $index) {
+            <div class="col-xl-3 col-lg-4 col-sm-6 trash">
+                <div class="vertical-product-box">
+                    <div class="vertical-product-box-img">
+                        <a [routerLink]="['/order/menu-listing',item.slug]" class="bg-size" [ngStyle]="{'background-image': 'url(' +  item.image_url  + ')'}">
+                            <img class="product-img-top w-100 bg-img" [src]="item.image_url" alt="vp1" style="display: none;">
+                        </a>
+                        @if(item.isOffer){
+                        <div class="offers">
+                            <h6>upto $2</h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h4>50% OFF</h4>
+                                <div class="seller-badge">
+                                    <img class="img-fluid badge" src="assets/images/svg/medal-fill.svg" alt="medal">
+                                    <h6>Best Seller</h6>
+                                </div>
+                            </div>
+                        </div>
+                        }
+                        <a class="wishlist-close" (click)="deleteWishlist(index)">
+                            <i class="ri-close-line"></i>
+                        </a>
+                    </div>
+                    <div class="vertical-product-body">
+                        <div class="d-flex align-items-center justify-content-between mt-sm-3 mt-2">
+                            <a [routerLink]="['/order/menu-listing',item.slug]">
+                                <h4 class="vertical-product-title">{{item.name}}</h4>
+                            </a>
+                            <h6 class="rating-star">
+                                <span class="star"><i class="ri-star-s-fill"></i></span>{{item.rating}}
+                            </h6>
+                        </div>
+                        <h5 class="product-items">{{item.description}}</h5>
+                        <div class="location-distance d-flex align-items-center justify-content-between pt-sm-3 pt-2">
+                            <h5 class="place">{{item.country}}</h5>
+                            <ul class="distance">
+                                <li><i class="ri-map-pin-fill icon"></i> {{item.distance}} km</li>
+                                <li><i class="ri-time-fill icon"></i> {{item.time}} min</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+    </div>
+</section>
+<!-- popular restaurant section end -->

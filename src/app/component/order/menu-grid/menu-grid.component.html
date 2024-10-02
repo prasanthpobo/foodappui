@@ -1,0 +1,20 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+
+<!-- menu section starts -->
+@if(menuGrid && menuGrid.product){
+<section class="menu-section section-b-space">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8">
+                <app-product-box [type]="'classic'" [id]="menuGrid.product"></app-product-box>
+            </div>
+            <div class="col-xl-3 col-lg-4 product-details-content">
+                <app-order-cart-items [title]="true" [buttonTitle]="'Proceed to payment'"></app-order-cart-items>
+            </div>
+        </div>
+    </div>
+</section>
+} 
+<!-- menu section end -->

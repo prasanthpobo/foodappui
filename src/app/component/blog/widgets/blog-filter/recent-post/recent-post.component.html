@@ -1,0 +1,13 @@
+<div class="post-wrap">
+    @for (item of data; track item) {
+    <a [routerLink]="['/blog/blog-details/by-furion']" class="post-box">
+        <div class="img-box">
+            <img class="img-fluid img" [src]="item.imageUrl" alt="post">
+        </div>
+        <div class="content-box">
+            <h6>{{item.user_name}}</h6>
+            <span>{{item.date}}</span>
+        </div>
+    </a>
+    }
+</div>

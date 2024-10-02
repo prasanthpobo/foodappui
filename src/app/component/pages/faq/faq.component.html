@@ -1,0 +1,52 @@
+<!-- page head section starts -->
+<app-breadcrumb [breadcrumb]="breadcrumb"></app-breadcrumb>
+<!-- page head section end -->
+
+<!-- faq section starts -->
+<section class="section-b-space">
+    <div class="container">
+        <div class="faq-title">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-xl-4">
+                <div class="side-img">
+                    <img class="img-fluid img" src="assets/images/faq.svg" alt="faq">
+                </div>
+            </div>
+            <div class="col-xl-8">
+                <div ngbAccordion [closeOthers]="true" class="accordion accordion-flush help-accordion">
+                    @for (item of faq; track item) {
+                    <div ngbAccordionItem class="accordion-item" [collapsed]="item.title !== 'I want to track my order'">
+                        <h2 ngbAccordionHeader class="accordion-header">
+                            <button ngbAccordionButton class="accordion-button">{{ item.title }}</button>
+                        </h2>
+                        <div ngbAccordionCollapse class="accordion-collapse collapse show">
+                            <div ngbAccordionBody class="accordion-body">
+                                <ng-template>
+                                    @for (items of item.data; track items) {
+                                    @if(items.title){
+                                    {{items.title}}
+                                    }
+                                    @if(items.item){
+                                    {{items.item}}
+                                    }
+                                    @if(items.data){
+                                    <ul>
+                                        @for (subitems of items.data; track subitems) {
+                                        <li>{{subitems.item}}</li>
+                                        }
+                                    </ul>
+                                    }
+                                    }
+                                </ng-template>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- faq section end -->
